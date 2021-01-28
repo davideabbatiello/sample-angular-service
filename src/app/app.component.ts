@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 
 import LiferayParams from '../types/LiferayParams'
 import { SampleService } from './sample.service'
@@ -14,7 +14,7 @@ export class AppComponent {
 	params: LiferayParams;
 	labels: any;
 
-	constructor(public sampleService: SampleService) {
+	constructor(@Inject(SampleService) public sampleService: SampleService) {
 		this.labels = {
 
 			configuration: 'Configuration',
